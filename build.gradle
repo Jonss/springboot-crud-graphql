@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+ext {
+	graphqlVersion = '5.0.2'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'jonss.github.com'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'com.graphql-java:graphql-java-tools:5.2.4'
+	implementation "com.graphql-java:graphql-spring-boot-starter:$graphqlVersion"
+	implementation "com.graphql-java:graphiql-spring-boot-starter:$graphqlVersion"
+}

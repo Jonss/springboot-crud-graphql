@@ -1,0 +1,19 @@
+type User {
+    name: String,
+    email: String,
+    uuid: String
+}
+
+input UserInput {
+    name: String,
+    email: String,
+    uuid: String
+}
+
+type Query {
+    findUser(uuid: String): User
+}
+
+type Mutation {
+    createUser(book: UserInput!): User
+}
