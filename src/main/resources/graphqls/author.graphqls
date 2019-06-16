@@ -1,0 +1,10 @@
+type Author {
+    fullname: String,
+    email: String
+    books: [Book]
+}
+
+input AuthorInput {
+    fullname: String,
+    email: String
+}

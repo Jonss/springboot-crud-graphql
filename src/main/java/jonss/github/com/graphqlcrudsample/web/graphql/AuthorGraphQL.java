@@ -1,5 +1,6 @@
 package jonss.github.com.graphqlcrudsample.web.graphql;
 
+import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import jonss.github.com.graphqlcrudsample.domain.models.Author;
 import jonss.github.com.graphqlcrudsample.domain.models.Book;
@@ -11,20 +12,17 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-public class QueryGraphQL implements GraphQLQueryResolver {
+public class AuthorGraphQL implements GraphQLMutationResolver, GraphQLQueryResolver {
 
     @Autowired
     private AuthorService authorService;
 
-    @Autowired
-    private BookService bookService;
-
-    public Optional<Book> findBook(String isbn) {
-        return bookService.findBook(isbn);
-    }
-
     public Optional<Author> findAuthor(String email){
         return authorService.findAuthorByEmail(email);
+    }
+
+    public Author createAuthor(Author author) {
+        return authorService.create(author);
     }
 
 }
