@@ -1,4 +1,4 @@
-package jonss.github.com.graphqlcrudsample;
+package jonss.com.github.graphqlcrudsample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
